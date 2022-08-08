@@ -1,4 +1,9 @@
 <template>
+  <button @click="showAddStockForm">Add stock</button>
+  <div v-if="showStockForm">
+    <AddStockForm @add-stock="addStock" />
+  </div>
+
   <div class="stocks">
     <Stock v-for="stock in stocks" :key="stock.name" :stock="stock" />
   </div>
@@ -6,10 +11,12 @@
 
 <script>
 import Stock from "../components/Stock.vue";
+import AddStockForm from "../components/AddStockForm.vue";
 export default {
-  components: { Stock },
+  components: { AddStockForm, Stock },
   data() {
     return {
+      showStockForm: false,
       stocks: [
         { name: "IBM", open: 89.9, close: 90, high: 100, low: 80 },
         { name: "Aple", open: 88.9, close: 70, high: 130, low: 80 },
@@ -19,6 +26,15 @@ export default {
         { name: "OPP", open: 89.9, close: 87, high: 87, low: 80 },
       ],
     };
+  },
+  methods: {
+    addStock(newStock) {
+      this.stocks = [...this.stocks, newStock];
+      this.showStockForm = false;
+    },
+    showAddStockForm() {
+      this.showStockForm = !this.showStockForm;
+    }
   },
 };
 </script>
