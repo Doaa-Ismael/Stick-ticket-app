@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-// import HelloWorld from './components/HelloWorld.vue'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
@@ -44,5 +43,4 @@ nav a {
 nav a:first-of-type {
   border: 0;
 }
-
 </style>
