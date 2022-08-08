@@ -1,22 +1,17 @@
 <template>
   <div class="stocks">
-    <div class="stock" v-for="{name, open, close, high, low} in stocks">
-      <div class="details">
-        <h4  :style="{ color: close >= open ? 'green' : 'red' }">{{ close }}</h4>
-        <h4>{{ name }}</h4>
-      </div>
-      <div>
-        <p>Open: {{open}}</p>
-        <p>Close: {{close}}</p>
-        <p>High: {{high}}</p>
-        <p>Low: {{low}}</p>
-      </div>
-    </div>
+    <Stock
+        v-for="stock in stocks"
+        :key="stock.name"
+        :stock="stock"
+    />
   </div>
 </template>
 
 <script>
+import Stock from "../components/Stock.vue";
 export default {
+  components: {Stock},
   data() {
     return {
       stocks: [
@@ -41,23 +36,6 @@ export default {
   column-gap: 8px;
   row-gap: 8px;
   margin-top: 8px;
-}
-
-.stock {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-width: 220px;
-  background: #c6c4c5b3;
-  border-radius: 10px;
-  padding: 8px;
-}
-
-.details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
 }
 
 .details h4 {
