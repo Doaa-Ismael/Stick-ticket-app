@@ -1,5 +1,5 @@
 <template>
-  <div class="stock">
+  <div class="card">
     <div class="details">
       <h4 :style="{ color: stock.close >= stock.open ? 'green' : 'red' }">
         {{ stock.close }}
@@ -22,25 +22,3 @@ export default {
 };
 </script>
 
-<style>
-.stock {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  min-width: 220px;
-  background: #c6c4c5b3;
-  border-radius: 10px;
-  padding: 8px;
-}
-
-.details {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.details h4 {
-  font-size: x-large;
-}
-</style>

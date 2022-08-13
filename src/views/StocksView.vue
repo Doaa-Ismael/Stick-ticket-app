@@ -4,7 +4,7 @@
     <AddStockForm @add-stock="addStock" />
   </div>
 
-  <div class="stocks">
+  <div class="container">
     <Stock v-for="stock in stocks" :key="stock.name" :stock="stock" />
   </div>
 </template>
@@ -61,17 +61,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.stocks {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 8px;
-  row-gap: 8px;
-  margin-top: 8px;
-}
-
-.details h4 {
-  font-size: x-large;
-}
-</style>

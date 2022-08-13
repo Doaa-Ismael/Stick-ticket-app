@@ -11,6 +11,11 @@ const router = createRouter({
       path: '/stocks',
       name: 'stocks',
       component: () => import('../views/StocksView.vue')
+    },
+    {
+      path: '/fx',
+      name: 'Foreign Exchange',
+      component: () => import('../views/ForeignExchange.vue')
     }
   ]
 })

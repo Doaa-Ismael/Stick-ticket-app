@@ -15,6 +15,38 @@ a,
   transition: 0.4s;
 }
 
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+  margin-top: 8px;
+}
+
+h4 {
+  font-size: x-large;
+}
+
+.card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-width: 220px;
+  background: #c6c4c5b3;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.card .details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
